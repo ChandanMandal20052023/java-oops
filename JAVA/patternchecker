@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class NumberPatternChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first number (a): ");
+        int a = scanner.nextInt();
+
+        System.out.print("Enter second number (b): ");
+        int b = scanner.nextInt();
+
+        System.out.print("Enter third number (c): ");
+        int c = scanner.nextInt();
+
+        if (a != b && b != c && a != c) {
+            if (a < b && b < c) {
+                System.out.println("Strictly Increasing");
+            } else if (a > b && b > c) {
+                System.out.println("Strictly Decreasing");
+            } else if (b > a && b > c) {
+                System.out.println("Middle number is largest");
+            } else {
+                System.out.println("No specific pattern");
+            }
+        } else {
+            System.out.println("No specific pattern");
+        }
+
+        scanner.close();
+    }
+}
